@@ -1,12 +1,16 @@
-const express = require('express')
+const express = require('express');
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3333;
 
 app.get('/att', (req, res) => {
-  res.status(200).json({
+  res.json({
     id: 1,
     msg: "Atualização"
   })

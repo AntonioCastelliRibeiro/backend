@@ -1,9 +1,15 @@
 const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+
+app.use(express.json());
+
+const port = process.env.PORT || 3000;
 
 app.get('/att', (req, res) => {
-  res.send('Atualização')
+  res.status(200).json({
+    id: 1,
+    msg: "Atualização"
+  })
 })
 
 app.get('/', (req, res) => {
